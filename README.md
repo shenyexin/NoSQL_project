@@ -13,9 +13,9 @@
 3）选择观影电影名称、场次、人数，确认并付款
 
 ## 环境依赖
-Mongodb4.2  
-Python3.7.3  
-Django2.2  
+Mongodb 4.2  
+Python 3.7.3  
+Django 2.2  
 
 ## 环境安装配置与使用说明
 在本机上安装Monogodb数据库、安装python环境、安装IDE(pycharm)   
