@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电影列表</title>
+    <link rel="stylesheet" href="../static/lb.css">
+</head>
+<body>
+<div class="ti">
+    <h2>热映电影</h2>
+</div>
+<div class="geren">
+    <form action='/person/'>
+        <input type="submit" value="个人账户" >
+    </form>
+</div>
+<script>
+    var a ={{ benefit }};
+    if (a != 0)
+        alert("天降好运！恭喜您获得一张{{ benefit }}元优惠券！")
+</script>
+{% for row in movie_list %}
+    <div class="list">
+        <dl>
+            <a href="/order/?title={{ row.title }}"><img src={{ row.pic }} width="200" height="280"></a>
+            <dt>{{ row.title }}</dt>
+            <dt>{{ row.duration }} - {{ row.label }}</dt>
+            <dt>{{ row.brief }}</dt>
+        </dl>
+    </div>
+{% endfor %}
+{#    <li >#}
+{#        <a href="/order/"><img src="http://img5.mtime.cn/mt/2019/10/02/105322.55848363_100X140X4.jpg"></a>#}
+{#        <dl>#}
+{#            <dt>沉睡魔咒2</dt>#}
+{#            <dt>118分钟 - 冒险 / 家庭</dt>#}
+{#            <dt>人类与精灵之间引发冲突</dt>#}
+{#        </dl>#}
+{#    </li>#}
+{#        <li class="clearfix">#}
+{#            <a href="http://movie.mtime.com/262423/" title="航海王：狂热行动/One Piece: Stampede(2019)" target="_blank"#}
+{#               class="picbox __r_c_" pan="M14_TheaterIndex_Hotplay_Cover"><img#}
+{#                    src="http://img5.mtime.cn/mt/2019/09/29/144538.37895074_100X140X4.jpg"#}
+{#                    alt="航海王：狂热行动/One Piece: Stampede(2019)"><span class="score none" mid="262423"></span><i#}
+{#                    class="icon_hot"></i><span class="banben"></span></a>#}
+{#            <dl>#}
+{#                <dt><a href="http://movie.mtime.com/262423/" class="__r_c_" pan="M14_TheaterIndex_Hotplay_Text"#}
+{#                       target="_blank">航海王：狂热行动</a></dt>#}
+{#                <dd class="__r_c_" pan="M14_TheaterIndex_Hotplay_Text">101分钟 - <a#}
+{#                        href="http://movie.mtime.com/movie/search/section/?type=Animation" target="_blank">动画</a> / <a#}
+{#                        href="http://movie.mtime.com/movie/search/section/?type=Action" target="_blank">动作</a></dd>#}
+{#                <dd>34家影院上映159场</dd>#}
+{#                <dd class="hot"><i class="ico_dot"></i>路飞争霸航海世博会</dd>#}
+{#                <dd class="btns"><a href="http://theater.mtime.com/China_Jiangsu_Province_Changzhou/movie/262423/"#}
+{#                                    class="ticket __r_c_" pan="M14_TheaterIndex_Hotplay_Button" target="_blank">选座购票</a>#}
+{#                </dd>#}
+{#            </dl>#}
+{#        </li>#}
+{#    </ul>#}
+{#    <ul class="clearfix">#}
+{#        <li class="clearfix">#}
+{#            <a href="http://movie.mtime.com/261960/" title="中国机长/The Captain(2019)" target="_blank"#}
+{#               class="picbox __r_c_" pan="M14_TheaterIndex_Hotplay_Cover"><img#}
+{#                    src="http://img5.mtime.cn/mt/2019/09/18/095839.16473700_100X140X4.jpg" alt="中国机长/The Captain(2019)"><span#}
+{#                    class="score none" mid="261960"></span><span class="banben"><i class="icon_imax"></i>#}
+{#<i class="icon_dmax"></i>#}
+{#</span></a>#}
+{#            <dl>#}
+{#                <dt><a href="http://movie.mtime.com/261960/" class="__r_c_" pan="M14_TheaterIndex_Hotplay_Text"#}
+{#                       target="_blank">中国机长</a></dt>#}
+{#                <dd class="__r_c_" pan="M14_TheaterIndex_Hotplay_Text">111分钟 - <a#}
+{#                        href="http://movie.mtime.com/movie/search/section/?type=Drama" target="_blank">剧情</a> / <a#}
+{#                        href="http://movie.mtime.com/movie/search/section/?type=Biography" target="_blank">传记</a></dd>#}
+{#                <dd>34家影院上映141场</dd>#}
+{#                <dd class="hot"><i class="ico_dot"></i>再现中国民航英雄机组惊险时刻</dd>#}
+{#                <dd class="btns"><a href="http://theater.mtime.com/China_Jiangsu_Province_Changzhou/movie/261960/"#}
+{#                                    class="ticket __r_c_" pan="M14_TheaterIndex_Hotplay_Button" target="_blank">选座购票</a>#}
+{#                </dd>#}
+{#            </dl>#}
+{#        </li>#}
+{#        <li class="clearfix">#}
+{#            <a href="http://movie.mtime.com/258576/" title="犯罪现场/A Witness out of the Blue(2019)" target="_blank"#}
+{#               class="picbox __r_c_" pan="M14_TheaterIndex_Hotplay_Cover"><img#}
+{#                    src="http://img5.mtime.cn/mt/2019/10/08/143412.98618049_100X140X4.jpg"#}
+{#                    alt="犯罪现场/A Witness out of the Blue(2019)"><span class="score none" mid="258576"></span><span#}
+{#                    class="banben"></span></a>#}
+{#            <dl>#}
+{#                <dt><a href="http://movie.mtime.com/258576/" class="__r_c_" pan="M14_TheaterIndex_Hotplay_Text"#}
+{#                       target="_blank">犯罪现场</a></dt>#}
+{#                <dd class="__r_c_" pan="M14_TheaterIndex_Hotplay_Text">104分钟 - <a#}
+{#                        href="http://movie.mtime.com/movie/search/section/?type=Thriller" target="_blank">惊悚</a> / <a#}
+{#                        href="http://movie.mtime.com/movie/search/section/?type=Mystery" target="_blank">悬疑</a></dd>#}
+{#                <dd>30家影院上映101场</dd>#}
+{#                <dd class="hot"><i class="ico_dot"></i>古天乐领衔警民匪三方对决</dd>#}
+{#                <dd class="btns"><a href="http://theater.mtime.com/China_Jiangsu_Province_Changzhou/movie/258576/"#}
+{#                                    class="ticket __r_c_" pan="M14_TheaterIndex_Hotplay_Button" target="_blank">选座购票</a>#}
+{#                </dd>#}
+{#            </dl>#}
+{#        </li>#}
+{#    </ul>#}
+{#    <ul class="clearfix">#}
+{#        <li class="clearfix">#}
+{#            <a href="http://movie.mtime.com/263505/" title="我和我的祖国/My People，My Country(2019)" target="_blank"#}
+{#               class="picbox __r_c_" pan="M14_TheaterIndex_Hotplay_Cover"><img#}
+{#                    src="http://img5.mtime.cn/mt/2019/09/26/092513.45212756_100X140X4.jpg"#}
+{#                    alt="我和我的祖国/My People，My Country(2019)"><span class="score none" mid="263505"></span><span#}
+{#                    class="banben"><i class="icon_imax"></i>#}
+{#<i class="icon_dmax"></i>#}
+{#</span></a>#}
+{#            <dl>#}
+{#                <dt><a href="http://movie.mtime.com/263505/" class="__r_c_" pan="M14_TheaterIndex_Hotplay_Text"#}
+{#                       target="_blank">我和我的祖国</a></dt>#}
+{#                <dd class="__r_c_" pan="M14_TheaterIndex_Hotplay_Text">155分钟 - <a#}
+{#                        href="http://movie.mtime.com/movie/search/section/?type=Drama" target="_blank">剧情</a></dd>#}
+{#                <dd>23家影院上映46场</dd>#}
+{#                <dd class="hot"><i class="ico_dot"></i>7个历史瞬间浓缩新中国70年历程</dd>#}
+{#                <dd class="btns"><a href="http://theater.mtime.com/China_Jiangsu_Province_Changzhou/movie/263505/"#}
+{#                                    class="ticket __r_c_" pan="M14_TheaterIndex_Hotplay_Button" target="_blank">选座购票</a>#}
+{#                </dd>#}
+{#            </dl>#}
+{#        </li>#}
+{#        <li class="clearfix">#}
+{#            <a href="http://movie.mtime.com/263126/" title="攀登者/The Climbers(2019)" target="_blank"#}
+{#               class="picbox __r_c_" pan="M14_TheaterIndex_Hotplay_Cover"><img#}
+{#                    src="http://img5.mtime.cn/mt/2019/09/26/114536.37789206_100X140X4.jpg" alt="攀登者/The Climbers(2019)"><span#}
+{#                    class="score none" mid="263126"></span><span class="banben"><i class="icon_imax"></i>#}
+{#<i class="icon_dmax"></i>#}
+{#</span></a>#}
+{#            <dl>#}
+{#                <dt><a href="http://movie.mtime.com/263126/" class="__r_c_" pan="M14_TheaterIndex_Hotplay_Text"#}
+{#                       target="_blank">攀登者</a></dt>#}
+{#                <dd class="__r_c_" pan="M14_TheaterIndex_Hotplay_Text">125分钟 - <a#}
+{#                        href="http://movie.mtime.com/movie/search/section/?type=Adventure" target="_blank">冒险</a> / <a#}
+{#                        href="http://movie.mtime.com/movie/search/section/?type=Drama" target="_blank">剧情</a></dd>#}
+{#                <dd>21家影院上映36场</dd>#}
+{#                <dd class="hot"><i class="ico_dot"></i>两代中国攀登者向珠峰挑战</dd>#}
+{#                <dd class="btns"><a href="http://theater.mtime.com/China_Jiangsu_Province_Changzhou/movie/263126/"#}
+{#                                    class="ticket __r_c_" pan="M14_TheaterIndex_Hotplay_Button" target="_blank">选座购票</a>#}
+{#                </dd>#}
+{#            </dl>#}
+{#        </li>#}
+{#    </ul>#}
+{#</div>#}
+</body>
+</html>

@@ -1,0 +1,28 @@
+body{
+	background: url("../static/dd.jpg") no-repeat;
+    background-size: 120%;
+    margin-left: 40px;
+}
+
+#apDiv1 {
+	position: absolute;
+	left: 250px;
+	top: 55px;
+	width: 551px;
+	height: 207px;
+	z-index: 1;
+}
+
+#apDiv2 {
+	position: absolute;
+	left: 427px;
+	top: 508px;
+	width: 80px;
+	height: 51px;
+	z-index: 2;
+}
+
+.sel{
+    width: 60px;
+    height: 30px;
+}

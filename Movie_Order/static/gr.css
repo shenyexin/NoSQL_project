@@ -1,0 +1,72 @@
+*{margin: 0;padding: 0;list-style: none;}
+body{
+	background: url("../static/gr.jpg") no-repeat;
+    background-size: 100%; 
+}
+.container{
+	width: 1200px;
+	height: 870px;
+	margin: 0 auto;
+/* 	background: #ccc; */
+}
+
+/* Ö÷ÌâÄÚÈÝ */
+.main{
+	width:1200px;
+	height: 450px;
+}
+.sideleft{
+	width:460px;
+	height: 300px;
+	float: left;
+	padding:85px 0px;
+	color:#00537B;
+}
+.sideleft h2{
+}
+.sideleft p{
+	padding: 0px 0px;
+	margin:auto;
+	font-size: 16px;
+	color:#00537B;
+}
+.sideright{
+	width: 480px;
+	height: 450px;
+	float: right;
+}
+.sideleft .index{
+	width: 330px;
+	height: 330px;
+	background-color:rgba(255,255,255,0.75);
+	margin: 0px 90px;
+}
+input[type="text"],
+input[type="submit"]{
+	-web-kit-appearance:none;
+  	-moz-appearance: none;
+  	display: block;
+  	margin: 0 auto;
+  	font-size:15px;
+  	width: 240px;
+}
+input[type="text"]{
+	height:35px;
+	border-radius:3px;
+	border:1px solid #c8cccf;
+	color:#6a6f77;
+	outline:0;
+}
+input[type="button"]{
+	margin-top: 25px;
+	height: 35px;
+	background: #00537B;
+	color: #bcedff;
+	font-weight: bold;
+	font-size: 16px;
+}
+input[type="button"]:hover{
+	background: #0072A8;
+	cursor: pointer;
+}
+ 

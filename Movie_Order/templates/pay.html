@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支付</title>
+    <link rel="stylesheet" href="../static/zf.css">
+</head>
+<body>
+<img src="../static/zf.jpg" width=100% height=40%/>
+<div align="center" style="font-family:微软雅黑;font-size:25px;color:#005279">
+    <form action="/finish/" method="POST">
+        <div id="right" align="center">
+            </br></br>
+            <p align="center">您选购的电影为：{{ title }}</p></br>
+            <p align="center">场次为：{{ myselect }}</p><br>
+            <p align="center">您需支付：{{ total }} (使用优惠券已优惠{{ benefit }}￥)</p><br>
+        </div>
+        </br>
+        <div id="button">
+            <input type="button" onclick="check()" value="账户余额付款" class="btn"
+                   style="color:#CCC;font-family:黑体;font-size:18px;">
+        </div>
+    </form>
+</div>
+<script>
+    function check() {
+        var money ={{ money }};
+        var total ={{ total }};
+        if (money < total) {
+            alert("账户余额不足！请先充值");
+            location.href = "/person/";
+        } else {
+            alert("付款成功！");
+            location.href = "/finish/";
+        }
+    }
+</script>
+</body>
+</html>
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>支付</title>#}
+{#</head>#}
+{#<body>#}
+{#<form action="/finish/">#}
+{#    <p>您选购的电影为：{{ title }}</p>#}
+{#    <p>场次为：{{ myselect }}</p>#}
+{#    <p>您需支付：{{ total }}</p>#}
+{#    <p><img src="../static/pay.jpg" width="200"  /></p>#}
+{#    <button type="submit">已完成付款</button>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}

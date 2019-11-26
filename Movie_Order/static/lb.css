@@ -1,0 +1,14 @@
+.list {
+    float: left;
+    margin-left: 40px;
+}
+
+.ti{
+    margin-left: 40px;
+}
+
+.geren{
+    float: right;
+    margin-top: -60px;
+    margin-right: 20px;
+}

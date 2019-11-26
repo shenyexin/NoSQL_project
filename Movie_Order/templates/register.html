@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="../static/zc.css">
+</head>
+<body>
+<div class="container">
+    <div class="main">
+        <div class="sideleft" color="red">
+            </br></br></br>
+            </br></br></br>
+            </br></br></br>
+            </br></br></br>
+            <p><font size="6" color=#357eb8>欢迎注册成为新会员啦~</font></p>
+        </div>
+        <div class="sideright">
+            <div class="index">
+                <form action="/" method="POST" omsubmit='return login()'>
+                    <p class="headline">用户注册</p>
+                    <p class="astyle">昵称：</p>
+                    <input type="text" id="nickname" name="nickname" placeholder="请输入2-12位字符(1个汉字占1位)">
+                    <p class="astyle">手机：</p>
+                    <input type="text" id="phone" name="phone" placeholder="请输入11位手机号">
+                    <p class="astyle">密码：</p>
+                    <input type="password" id="password" name="password" placeholder="请输入6-16位字符">
+                    <input id="confir" type="submit" value="提交">
+                    </br>
+                    </br></br>
+                    <script>
+                        confir.onclick = function () {
+                            var len ={{ lenth }};
+                            var arr ={{ exist|safe }};
+                            var subphone = document.getElementById("phone").value;
+                            var subname = document.getElementById("nickname").value;
+                            var subpassword = document.getElementById("password").value;
+                            if (subphone == '' || subname == '' || subpassword == '') {
+                                return false;
+                            }
+                            if (subname.length<2||subname.length>12){
+                                alert("昵称长度不合法");
+                                return false;
+                            }
+                            if (subphone.length!=11){
+                                alert("手机号位数不正确");
+                                return false;
+                            }
+                            else {
+                                for (var i=0;i<11;i++){
+                                    if (subphone[i]<'0'||subphone[i]>'9'){
+                                        alert("手机号不合法");
+                                        return false;
+                                    }
+                                }
+                            }
+                            if (subpassword.length<6||subname.length>16){
+                                alert("密码长度不合法");
+                                return false;
+                            }
+                            for (var i = 0; i < len; i++) {
+                                if (arr[i] == subphone) {
+                                    alert("手机号已被注册，请检查后重试！");
+                                    {#window.location.href = '/register/';#}
+                                    return false;
+                                }
+                            }
+                            alert("注册成功");
+                            return true;
+                        }
+                    </script>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
+
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>注册</title>#}
+{#</head>#}
+{#<body>#}
+{#<form action="/" method="POST" omsubmit='return login()'>#}
+{#    <p>昵称：<input type="text" name="nickname"></p>#}
+{#    <p>手机：<input id="phone" type="tel" name="phone"></p>#}
+{#    <p>密码：<input type="password" name="password"></p>#}
+{#    <input id="confir" type="submit" value="提交">#}
+{#    <script>#}
+{#        confir.onclick = function () {#}
+{#            var len ={{ lenth }};#}
+{#            var arr ={{ exist|safe }};#}
+{#            var subphone = document.getElementById("phone").value;#}
+{#            console.log(subphone)#}
+{#            for (var i = 0; i < len; i++) {#}
+{#                if (arr[i] == subphone) {#}
+{#                    alert("手机号已被注册，请检查后重试！");#}
+{#                    window.location.href = '/register/';#}
+{#                    return false;#}
+{#                }#}
+{#            }#}
+{#            alert("注册成功");#}
+{#            return true;#}
+{#        }#}
+{#    </script>#}
+{#</form>#}
+{#</body>#}
+{#</html>#}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>完成</title>
+    <link rel="stylesheet" href="../static/wc.css">
+    <style type="text/css">
+        body, td, th {
+            color: #000;
+        }
+
+        body {
+            background-color: #FFF;
+            background-image: url(../static/wc.jpg);
+        }
+    </style>
+</head>
+<body bgcolor="#FFFFFF">
+<div class="header">
+    <h1>祝您观影愉快！</h1>
+    <h2><strong> 您的取票码为：{{ strs }}</strong></h2>
+    <h2><a onclick="gotoperson()">返回我的主页</a></h2>
+</div>
+<script>
+    function gotoperson() {
+        window.location.href='/person/';
+    }
+</script>
+</body>
+</html>
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>完成</title>#}
+{#</head>#}
+{#<body>#}
+{#<script>#}
+{#    alert("恭喜您选购成功！")#}
+{#</script>#}
+{#<p>您的电影取票序列为：{{ strs}}</p>#}
+{#<p>祝您观影愉快！</p>#}
+{#</body>#}
+{#</html>#}

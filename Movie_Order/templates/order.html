@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订票</title>
+    <link rel="stylesheet" href="../static/dd.css">
+</head>
+<body>
+<div id="apDiv1">
+    <dl>
+        <dt><h2><strong>{{ movie_list.title }}</strong></h2></dt>
+        <dt><h4>{{ movie_list.duration }} - {{ movie_list.label }}</h4></dt>
+        <dt>{{ movie_list.info }}</dt>
+   </dl>
+</div>
+<div class="info">
+    <h2>电影详情</h2>
+    <dl>
+        <div class="list">
+            <img src={{ movie_list.pic }} width="190" height="265">
+        </div>
+    </dl>
+</div>
+<HR style="border: 1px dashed #b9a3ae" width="100%" color=#b9a3ae SIZE=1>
+<h2>选购</h2>
+<form action="/pay/">
+    <select id="sele1" name="selected1">
+        <option>请选择观影日期</option>
+        <option>今天</option>
+        <option>明天</option>
+        <option>后天</option>
+    </select>
+    <select id="sele2" name="selected2">
+        <option>请选择观影场次</option>
+        <option>下午场</option>
+        <option>晚上场</option>
+    </select>
+    <input id="chaxun" type="button" value="查询余座">
+    <br>
+    <script>
+        chaxun.onclick = function () {
+            var sel1 = document.getElementById("sele1").value;
+            var sel2 = document.getElementById("sele2").value;
+            if (sel1 == '请选择观影日期' || sel2 == '请选择观影场次') {
+                alert("请输入合法的日期和场次！")
+                return;
+            }
+            var num = document.getElementById("tip1");
+            num.innerHTML = "该场次剩余座位:" + {{count}};
+            var sentence = document.getElementById("tip2");
+            sentence.innerHTML = "(重新查询前请先刷新网页)";
+        }
+    </script>
+    <div id="tip1"><br></div>
+    <p id="tip2"></p>
+    <p>输入观影人数：<input id="numm" type="number" name="num"></p>
+    <div id="error"></div>
+    <button id="tijiao" type="submit">提交</button>
+    <script>
+        tijiao.onclick = function () {
+            var count ={{ count }};
+            var num = document.getElementById("numm").value;
+            if (num > count) {
+                alert("观影人数超出限制，请重新输入")
+            } else
+                return;
+        }
+    </script>
+</form>
+</form>
+</body>
+</html>

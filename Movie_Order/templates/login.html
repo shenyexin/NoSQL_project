@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<link rel="stylesheet" href="../static/dl.css">
+</head>
+<body>
+	<div class="container">
+		<div class="main">
+			<div class="sideright">
+				<div class="index">
+					<form action="/login/" method="POST">
+						<p class="headline">用户登录</p>
+						<p class="astyle">手机：</p>
+						<input type="text" name="phone">
+						<p class="astyle">密码：</p>
+						<input type="password" name="password">
+                        <p class="msgstyle">{{ msg }}</p>
+						<input type="submit" value="提交" name="login" >
+						</br>
+						</br></br>
+						</form>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</body>
+</html>
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>登录</title>#}
+{#</head>#}
+{#<body>#}
+{#    <form action="/login/" method="POST">#}
+{#        <p>手机：<input type="tel" name="phone"></p>#}
+{#        <p>密码：<input type="password" name="password"></p>#}
+{#        <p>{{ msg }}</p>#}
+{#        <input type="submit" value="提交"><br>#}
+{#    </form>#}
+{#</body>#}
+{#</html>#}

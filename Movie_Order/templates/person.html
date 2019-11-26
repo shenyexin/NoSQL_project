@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人页</title>
+    <link rel="stylesheet" href="../static/gr.css">
+</head>
+<body>
+<div class="container">
+    <div class="main">
+        <div class="sideright">
+            </br></br></br>
+            </br></br></br>
+            </br></br></br>
+            </br></br></br>
+        </div>
+        <div class="sideleft">
+            </br></br>
+            </br></br>
+            <div class="index" style="text-align:center;">
+                </br>
+                <h2>Welcome！{{ nickname }}</h2><br>
+                <p>可进行如下操作：</p>
+                <input type="button" onclick="findmoney()" value="查询余额"> &nbsp;
+                <input type="button" onclick="depositmoney()" value="账户充值"><br>
+                <input type="button" onclick="findorder()" value="查询取票码">
+                <input type="button" onclick="findbenefit()" value="查询优惠券"><br>
+                <input type="button" onclick="modiftpwd()" value="修改密码">&nbsp;
+                <input type="button" onclick="logoff()" value="注销账号">
+                </br></br>
+                <p><a onclick="gotomovie()">Click here！去挑选喜欢的电影吧</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="/static/jquery-1.10.2.js"></script>
+<script>
+    function gotomovie() {
+        window.location.href = '/movielist/';
+    }
+
+    function findbenefit() {
+        alert("您的优惠券金额：{{ benefit }}");
+    }
+
+    function findmoney() {
+        alert("您的账户余额为：{{ money }}")
+    }
+
+    function findorder() {
+        alert("{{ code }}");
+    }
+
+    function logoff() {
+        var confirm = prompt('请输入"确认"两字以继续...');
+        $.ajax({
+            url: '/log_off/',
+            type: 'POST',
+            data: {'confirm': confirm},
+            success: function (data) {
+                console.log(data);
+                if (data == "OK") {
+                    alert("注销成功！期待下次相见！");
+                    location.href = "/";
+                } else {
+                    alert("注销失败！请重试");
+                }
+            }
+        })
+    }
+
+    function modiftpwd() {
+        var newpwd = prompt("请输入新密码");
+        $.ajax({
+            url: '/modift_pwd/',
+            type: 'POST',
+            data: {'new_pwd': newpwd},
+            success: function (data) {
+                console.log(data);
+                if (data == "OK") {
+                    alert("修改成功！请重新登录！");
+                    location.href = "/login/";
+                } else {
+                    alert("修改失败！请重试");
+                }
+            }
+        })
+    }
+
+    function depositmoney() {
+        var addmoney = prompt("请输入充值金额");
+        $.ajax({
+            url: '/add_money/',
+            type: 'POST',
+            data: {'addmoney': addmoney},
+            success: function (data) {
+                console.log(data);
+                if (data == "OK") {
+                    alert("充值成功！");
+                    location.href = "/person/";
+                } else {
+                    alert("充值失败！请重试");
+                }
+            }
+        })
+    }
+</script>
+</body>
+</html>
